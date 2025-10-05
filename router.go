@@ -16,8 +16,10 @@ type Router struct {
 
 // New creates a new Router instance.
 func New() *Router {
+	route := NewRoute()
 	return &Router{
-		root: NewRoute(),
+		root:               route,
+		RouterMethodsMixin: RouterMethodsMixin{route},
 	}
 }
 
